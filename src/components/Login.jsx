@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import style from "../style/Login.module.css";
 
 function Login() {
@@ -20,14 +21,18 @@ function Login() {
           <p>OR</p>
           <div className={style.emptyDiv}></div>
         </div>
-        <div className={style.optionDiv}>
-          <img src="/images/fblogo.avif" alt="fb logo" />
-          <p>Log in with Facebook</p>
-        </div>
+        <NavLink>
+          <div className={style.optionDiv}>
+            <img src="/images/fblogo.avif" alt="fb logo" />
+            <p>Log in with Facebook</p>
+          </div>
+        </NavLink>
         <p>Forgotten your password?</p>
       </div>
       <div className={style.signInDiv}>
-        <p>Don't have an account?Sign Up</p>
+        <p>
+          Don't have an account? <NavLink to='/sign'>Sign Up</NavLink>
+        </p>
       </div>
       <div className={style.appDiv}>
         <p>Get the App</p>
