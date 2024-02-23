@@ -1,3 +1,130 @@
 .outerDiv {
+  width: 100%;
+  max-width: 600px;
+  height: 100vh;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+}
+.loginDiv {
+  margin: 0;
+  padding: 35px;
+  padding-bottom: 0px;
+  width: 50%;
+  border: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loginDiv img {
+  width: 80px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.loginDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+}
+.loginDetails input {
+  width: auto;
+  padding: 5px;
+  padding-left: 10px;
+  outline: none;
+  border: 1px solid lightgray;
+  background-color: rgb(243, 238, 238);
+  color: #000;
+  font-weight: 500;
+}
+.loginDetails button {
+  width: auto;
+  margin-top: 8px;
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+  background-color: #6aa9e1;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+.segregationDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: auto;
+}
+.emptyDiv {
+  width: 130px;
+  height: 1px;
+  background-color: lightgrey;
+  margin: 0 10px;
+}
+.textDiv {
+  font-size: 16px;
+  color: #333;
+}
+.optionDiv {
+  width: 300px;
+  height: auto;
+  margin-top: 08px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.optionDiv img {
+  width: 20px;
+  position: relative;
+  top: 15px;
+}
+.optionDiv p {
+  /*in this position was relative then changed to static*/
+}
+.navlink {
+  text-decoration: none;
+  cursor: pointer;
+}
+.loginDiv > p {
+  position: relative;
+  top: -15px;
+  font-size: 12px;
+  color: rgb(138, 120, 120);
+  text-align: center;
+}
+.signInDiv {
+  background-color: white;
+  color: rgb(138, 120, 120);
+  width: 371px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  border: 1px solid lightgray;
+}
+.appDiv {
+  width: 62.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.appDiv > p {
+  font-size: 15px;
+}
+.appDownloadDiv {
+  width: 100%;
+  margin-top: -10px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.appDownloadDiv img {
+  width: 70px;
 }

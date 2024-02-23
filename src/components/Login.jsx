@@ -16,22 +16,28 @@ function Login() {
           <input type="text" name="" placeholder="Password" />
           <button>Log IN</button>
         </div>
+
         <div className={style.segregationDiv}>
           <div className={style.emptyDiv}></div>
-          <p>OR</p>
+          <div className={style.textDiv}>OR</div>
           <div className={style.emptyDiv}></div>
         </div>
-        <NavLink>
+
+        <NavLink className={style.navlink}>
           <div className={style.optionDiv}>
             <img src="/images/fblogo.avif" alt="fb logo" />
             <p>Log in with Facebook</p>
           </div>
         </NavLink>
+
         <p>Forgotten your password?</p>
       </div>
       <div className={style.signInDiv}>
         <p>
-          Don't have an account? <NavLink to='/sign'>Sign Up</NavLink>
+          Don't have an account?{" "}
+          <NavLink className={style.navlink} to="/sign">
+            Sign Up
+          </NavLink>
         </p>
       </div>
       <div className={style.appDiv}>
