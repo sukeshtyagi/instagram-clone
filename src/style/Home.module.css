@@ -1,27 +1,30 @@
 .homeContainer {
+  background-color: rgb(236, 233, 233);
   width: fit-content;
-  height: 100vh;
-  background-color: orange;
+  height: 98vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 .sideBarDiv {
   padding-left: 15px;
   padding-right: 80px;
-  background-color: white;
-  border-right: 2px solid lightgray;
+  background-color: rgb(236, 233, 233);
+  border-right: 2px solid rgba(198, 175, 175, 0.703);
   flex: 0.2;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
-.sideBarDiv img {
+.sideBarIcon {
+  position: relative;
+  top: 15px;
+  font-size: 60px;
   width: 60px;
-  margin: 25px;
-  margin-bottom: 25px;
+  margin: 15px;
   padding: 5px;
 }
 .menuList {
@@ -55,5 +58,68 @@
 }
 .mainDiv {
   flex: 0.8;
-  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(236, 233, 233);
+}
+.mainDiv h3 {
+  position: relative;
+  left: 200px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+.cardDiv {
+  background-color: white;
+  border-radius: 15px;
+  width: 700px;
+  height: auto;
+  display: flex;
+  justify-content: space-between; /**/
+  align-items: center;
+  margin: 10px; /**/
+  margin-right: 80px;
+  margin-left: 200px; /**/
+}
+.allDetailsDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  padding-left: 100px;
+}
+.allDetailsDiv img {
+  width: 85px;
+  height: 75px;
+  border-radius: 50%;
+}
+.detailsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+}
+.detailsDiv h6 {
+  margin: 0;
+  padding: 2px;
+  font-size: 18px;
+  font-weight: 900;
+}
+.detailsDiv p {
+  margin: 0;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.followBtn {
+  background-color: #6aa9e1;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: white;
+  margin-right: 50px;
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import style from "../style/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebookMessenger,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 import {
   faHeart,
@@ -13,12 +16,13 @@ import {
   faUser,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
+import data from "../data.json";
 
 function Home() {
   return (
     <div className={style.homeContainer}>
       <div className={style.sideBarDiv}>
-        <img src="/images/instalogo.jpeg" alt="instagram logo" />
+        <FontAwesomeIcon icon={faInstagram} className={style.sideBarIcon} />
         <div className={style.menuList}>
           <div className={style.menuItem}>
             <FontAwesomeIcon icon={faHouse} />
@@ -59,9 +63,47 @@ function Home() {
         </div>
       </div>
 
-      <div className={style.mainDiv}>Main page </div>
+      <div className={style.mainDiv}>
+        <h3>Suggested for you</h3>
+
+        <div className={style.cardDiv}>
+          <div className={style.allDetailsDiv}>
+            <img
+              src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
+              alt=""
+            />
+            <div className={style.detailsDiv}>
+              <h6>@missile_man</h6>
+              <p>Sh APJ Abdul Kalam</p>
+              <p>Popular</p>
+            </div>
+          </div>
+
+          <button className={style.followBtn}>Follow</button>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Home;
+
+/*
+<div className={style.mainDiv}>
+        <h3>Suggested for you</h3>
+        <div className={style.cardDiv}>
+          <div className={style.allDetailsDiv}>
+            <img
+              src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
+              alt=""
+            />
+            <div className={style.detailsDiv}>
+              <h6>@missile_man</h6>
+              <p>Sh APJ Abdul Kalam</p>
+              <p>Popular</p>
+            </div>
+          </div>
+
+          <button className={style.followBtn}>Follow</button>
+        </div>
+*/
