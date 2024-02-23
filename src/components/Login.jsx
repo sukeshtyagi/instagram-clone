@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import style from "../style/Login.module.css";
 
 function Login({
@@ -9,6 +9,11 @@ function Login({
   fbSignUpDivStyle,
   signUpDetailsStyle,
 }) {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("/home");
+  };
+
   return (
     <div className={style.outerDiv}>
       <div className={style.loginDiv}>
@@ -22,7 +27,7 @@ function Login({
               placeholder="Phone number, username or email addess"
             />
             <input type="text" name="" placeholder="Password" />
-            <button>Log IN</button>
+            <button onClick={handleLogin}>Log IN</button>
           </div>
         )}
 
@@ -83,7 +88,7 @@ function Login({
               and <NavLink className={style.navlink}>Cookies Policy</NavLink>
             </p>
 
-            <button>Sign Up</button>
+            <button onClick={handleLogin}>Sign Up</button>
           </div>
         )}
       </div>
