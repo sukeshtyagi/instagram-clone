@@ -53,6 +53,7 @@
   color: white;
   font-size: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 .segregationDiv {
   display: flex;
@@ -79,7 +80,6 @@
   justify-content: center;
 }
 .optionDiv button {
-  background-color: #6aa9e1;
   background-color: white;
   width: 100%;
   border: none;
@@ -88,15 +88,13 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .optionDiv img {
   width: 20px;
-  position: relative;
-  top: 20px;
+  margin: 0;
 }
-.optionDiv p {
-  /*in this position was relative then changed to static*/
-}
+
 .navlink {
   text-decoration: none;
   cursor: pointer;

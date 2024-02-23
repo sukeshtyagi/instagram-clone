@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Login from "./Login";
+import style from "../style/SignUp.module.css";
 
 function SignUp() {
   return (
-    <div>SignUp</div>
-  )
+    <Login
+      usedFor="signUp"
+      subtext="Sign up to see photos and videos from your friends."
+      subtextStyle={style.subtext}
+      fbSignUpDivStyle={style.fbSignUpDiv}
+      signUpDetailsStyle={style.signUpDetails}
+    />
+  );
 }
 
-export default SignUp
+export default SignUp;
