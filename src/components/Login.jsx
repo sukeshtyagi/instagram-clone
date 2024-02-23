@@ -25,8 +25,10 @@ function Login() {
 
         <NavLink className={style.navlink}>
           <div className={style.optionDiv}>
-            <img src="/images/fblogo.avif" alt="fb logo" />
-            <p>Log in with Facebook</p>
+            <button>
+              <img src="/images/fblogo.avif" alt="fb logo" />
+              <p>Log in with Facebook</p>
+            </button>
           </div>
         </NavLink>
 

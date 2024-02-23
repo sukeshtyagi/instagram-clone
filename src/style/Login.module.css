@@ -76,13 +76,23 @@
   height: auto;
   margin-top: 08px;
   display: flex;
-  gap: 10px;
   justify-content: center;
+}
+.optionDiv button {
+  background-color: #6aa9e1;
+  background-color: white;
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .optionDiv img {
   width: 20px;
   position: relative;
-  top: 15px;
+  top: 20px;
 }
 .optionDiv p {
   /*in this position was relative then changed to static*/
