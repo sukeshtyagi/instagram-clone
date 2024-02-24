@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "../style/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,9 +16,27 @@ import {
   faUser,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
-import data from "../data.json";
-
 function Home() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const url = "http://localhost:4000/data";
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          const serverData = await response.json();
+          console.log("data received from server", serverData);
+          setData(serverData);
+        }
+      } catch (error) {
+        console.log("Error", error);
+      }
+    };
+    getData();
+    console.log(data);
+  }, []);
+
   return (
     <div className={style.homeContainer}>
       <div className={style.sideBarDiv}>
@@ -66,21 +84,21 @@ function Home() {
       <div className={style.mainDiv}>
         <h3>Suggested for you</h3>
 
-        <div className={style.cardDiv}>
-          <div className={style.allDetailsDiv}>
-            <img
-              src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
-              alt=""
-            />
-            <div className={style.detailsDiv}>
-              <h6>@missile_man</h6>
-              <p>Sh APJ Abdul Kalam</p>
-              <p>Popular</p>
-            </div>
-          </div>
+        {data &&
+          data.map((item) => (
+            <div key={item.id} className={style.cardDiv}>
+              <div className={style.allDetailsDiv}>
+                <img src={item.image} alt="" />
+                <div className={style.detailsDiv}>
+                  <h6>{item.username}</h6>
+                  <p>{item.name}</p>
+                  <p>{item.reason}</p>
+                </div>
+              </div>
 
-          <button className={style.followBtn}>Follow</button>
-        </div>
+              <button className={style.followBtn}>Follow</button>
+            </div>
+          ))}
       </div>
     </div>
   );
@@ -89,21 +107,19 @@ function Home() {
 export default Home;
 
 /*
-<div className={style.mainDiv}>
-        <h3>Suggested for you</h3>
-        <div className={style.cardDiv}>
-          <div className={style.allDetailsDiv}>
-            <img
-              src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
-              alt=""
-            />
-            <div className={style.detailsDiv}>
-              <h6>@missile_man</h6>
-              <p>Sh APJ Abdul Kalam</p>
-              <p>Popular</p>
+<div key={item.id} className={style.cardDiv}>
+            <div className={style.allDetailsDiv}>
+              <img
+                src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
+                alt=""
+              />
+              <div className={style.detailsDiv}>
+                <h6>@missile_man</h6>
+                <p>Sh APJ Abdul Kalam</p>
+                <p>Popular</p>
+              </div>
             </div>
-          </div>
 
-          <button className={style.followBtn}>Follow</button>
-        </div>
+            <button className={style.followBtn}>Follow</button>
+          </div>
 */
