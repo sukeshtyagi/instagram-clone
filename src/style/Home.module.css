@@ -29,6 +29,11 @@
   width: 60px;
   margin: 15px;
   padding: 5px;
+  padding-left: 20px;
+  color: gray;
+}
+.sideBarIcon:hover {
+  color: rgb(227, 150, 142);
 }
 .menuList {
   width: 100%;
@@ -41,12 +46,13 @@
   margin: 0;
   margin-bottom: 0px;
   padding: 5px;
+  padding-left: 25px;
   padding-bottom: 0;
 }
 .menuItem {
   height: 30px;
   display: flex;
-  gap: 25px;
+  gap: 15px;
   align-items: center;
   justify-content: start;
   padding: 2px;

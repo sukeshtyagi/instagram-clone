@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "../style/Home.module.css";
 import { NavLink } from "react-router-dom";
+import BottomSheet from "./Bottomsheet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookMessenger,
@@ -19,6 +20,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 function Home() {
   const [data, setData] = useState(null);
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -38,10 +40,16 @@ function Home() {
     console.log(data);
   }, []);
 
+  const toggleBottomSheet = () => {
+    setShowBottomSheet(!showBottomSheet);
+  };
+
   return (
     <div className={style.homeContainer}>
       <div className={style.sideBarDiv}>
-        <FontAwesomeIcon icon={faInstagram} className={style.sideBarIcon} />
+        <NavLink to="/home">
+          <FontAwesomeIcon icon={faInstagram} className={style.sideBarIcon} />
+        </NavLink>
         <div className={style.menuList}>
           <div className={style.menuItem}>
             <FontAwesomeIcon icon={faHouse} />
@@ -95,7 +103,7 @@ function Home() {
             </NavLink>
           </div>
 
-          <div className={style.menuItem}>
+          <div className={style.menuItem} onClick={toggleBottomSheet}>
             <FontAwesomeIcon icon={faBars} />
             <p>More</p>
           </div>
@@ -121,26 +129,9 @@ function Home() {
             </div>
           ))}
       </div>
+      <BottomSheet show={showBottomSheet} onHide={toggleBottomSheet} />
     </div>
   );
 }
 
 export default Home;
-
-/*
-<div key={item.id} className={style.cardDiv}>
-            <div className={style.allDetailsDiv}>
-              <img
-                src="https://wallpapers.com/images/hd/abdul-kalam-hd-scientist-and-statesman-639ry6vs4optonvd.jpg"
-                alt=""
-              />
-              <div className={style.detailsDiv}>
-                <h6>@missile_man</h6>
-                <p>Sh APJ Abdul Kalam</p>
-                <p>Popular</p>
-              </div>
-            </div>
-
-            <button className={style.followBtn}>Follow</button>
-          </div>
-*/
