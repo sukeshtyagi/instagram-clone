@@ -10,6 +10,7 @@ function SignUp() {
       subtextStyle={style.subtext}
       fbSignUpDivStyle={style.fbSignUpDiv}
       signUpDetailsStyle={style.signUpDetails}
+      signInDivStyle={style.signInDiv}
     />
   );
 }

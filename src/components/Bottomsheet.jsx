@@ -1,42 +1,57 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import style from "../style/Bottomsheet.module.css"; // Import your CSS module
+import style from "../style/Bottomsheet.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 function BottomSheet({ show, onHide }) {
   return (
     <Modal show={show} onHide={onHide} animation={false} centered>
       <Modal.Body>
-        <div className={style.bottomSheetContainer}>
-          <div className={style.bottomSheetContent}>
-            <h4>Section 1</h4>
-            <ul>
-              <li>Settings</li>
-              <li>Activity</li>
-              <li>Saved</li>
-              <li>Switch Appearance</li>
-              <li>Report a Problem</li>
-            </ul>
+        <div className={style.bottomSheetOuterContainer}>
+          <div className={style.bottomSheetSection1}>
+            <div className={style.bottomSheetContentContainer}>
+              <FontAwesomeIcon icon={faGear}/>
+              <p>Settings</p>
+            </div>
+
+            <div className={style.bottomSheetContentContainer}>
+              {/*icon */}
+              <p>Your Activity</p>
+            </div>
+
+            <div className={style.bottomSheetContentContainer}>
+              {/*icon */}
+              <p>Saved</p>
+            </div>
+
+            <div className={style.bottomSheetContentContainer}>
+              {/*icon */}
+              <p>Switch appearance</p>
+            </div>
+
+            <div className={style.bottomSheetContentContainer}>
+              {/*icon */}
+              <p>Report a problem</p>
+            </div>
           </div>
 
-          <div className={style.bottomSheetContent}>
-            <h4>Section 2</h4>
-            <ul>
-              <li>Threads</li>
-            </ul>
+          <div className={style.bottomSheetSection2}>
+            <div className={style.bottomSheetContentContainer}>
+              {/*icon */}
+              <p>Threads</p>
+            </div>
           </div>
 
-          <div className={style.bottomSheetContent}>
-            <h4>Section 3</h4>
-            <ul>
-              <li>Switch Account</li>
-            </ul>
+          <div className={style.bottomSheetSection3}>
+            <div className={style.bottomSheetContentContainer}>
+              <p>Switch accounts</p>
+            </div>
           </div>
-
-          <div className={style.bottomSheetContent}>
-            <h4>Section 4</h4>
-            <ul>
-              <li>Logout</li>
-            </ul>
+          <div className={style.bottomSheetSection4}>
+            <div className={style.bottomSheetContentContainer}>
+              <p>Logout</p>
+            </div>
           </div>
         </div>
       </Modal.Body>

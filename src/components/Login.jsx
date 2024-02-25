@@ -8,6 +8,7 @@ function Login({
   subtextStyle,
   fbSignUpDivStyle,
   signUpDetailsStyle,
+  signInDivStyle,
 }) {
   const navigate = useNavigate();
   const handleLogin = () => {
@@ -104,7 +105,7 @@ function Login({
       )}
 
       {usedFor && (
-        <div className={style.signInDiv}>
+        <div className={signInDivStyle}>
           <p>
             Have an account?{" "}
             <NavLink className={style.navlink} to="/">

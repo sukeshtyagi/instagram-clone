@@ -8,6 +8,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: auto;
+  margin-top: 30px;
 }
 .loginDiv {
   margin: 0;
@@ -76,6 +77,7 @@
   width: 300px;
   height: auto;
   margin-top: 08px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
@@ -110,8 +112,10 @@
   background-color: white;
   color: rgb(138, 120, 120);
   width: 371px;
+  height: 35px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 10px 0;
   border: 1px solid lightgray;
 }
