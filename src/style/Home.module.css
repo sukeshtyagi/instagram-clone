@@ -1,6 +1,7 @@
 .homeContainer {
   background-color: rgb(236, 233, 233);
-  width: fit-content;
+  width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -68,12 +69,13 @@
 .mainDiv {
   flex: 0.8;
   width: 100%;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: rgb(236, 233, 233);
   margin-left: 238px;
+  max-height: calc(95vh - 35px);
+  overflow-y: auto;
 }
 .mainDiv h3 {
   position: relative;
@@ -91,8 +93,8 @@
   justify-content: space-between; /**/
   align-items: center;
   margin: 8px; /**/
-  margin-right: 80px;
-  margin-left: 200px; /**/
+  margin-right: 0px;
+  margin-left: 60px; /**/
   padding: 5px;
 }
 .allDetailsDiv {
