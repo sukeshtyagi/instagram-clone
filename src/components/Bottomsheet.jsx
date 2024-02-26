@@ -9,6 +9,7 @@ import {
   faCircleInfo,
   faGear,
   faMoon,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faThreads } from "@fortawesome/free-brands-svg-icons";
 
@@ -59,6 +60,7 @@ function BottomSheet({ show, onHide }) {
               <FontAwesomeIcon icon={faThreads} className={style.threads} />
               <NavLink to="" className={style.navlink}>
                 <p>Threads</p>
+                <FontAwesomeIcon icon={faArrowRight} className={style.icon} />
               </NavLink>
             </div>
           </div>

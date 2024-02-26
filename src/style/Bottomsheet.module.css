@@ -29,7 +29,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+}
+.icon {
+  margin-left: 90px;
+  display: none;
 }
 .bottomSheetContentContainer:hover {
   background-color: rgb(227, 150, 142);
@@ -38,6 +42,11 @@
   border-radius: 10em;
   width: 70%;
   margin: 10px 0px;
+}
+.bottomSheetContentContainer:hover .icon {
+  display: inline;
+  transform: rotate(-45deg);
+  color: rgb(90, 90, 240);
 }
 .bottomSheetContentContainer svg {
   font-size: 15px;
@@ -49,6 +58,9 @@
 }
 .navlink {
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navlink p {
   text-decoration: none;
