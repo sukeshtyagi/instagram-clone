@@ -32,10 +32,9 @@ function Home() {
 
   return (
     <div className={style.homeContainer}>
-      <Navbar toggleBottomSheet={toggleBottomSheet}/>
+      <Navbar toggleBottomSheet={toggleBottomSheet} />
       <div className={style.mainDiv}>
         <h3>Suggested for you</h3>
-
         {data &&
           data.map((item) => (
             <div key={item.id} className={style.cardDiv}>

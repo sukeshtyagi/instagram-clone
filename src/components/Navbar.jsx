@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import style from "../style/Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,10 +18,28 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({toggleBottomSheet}) {
- 
+function Navbar({ toggleBottomSheet }) {
+  const bottomSheetRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        bottomSheetRef.current &&
+        !bottomSheetRef.current.contains(event.target)
+      ) {
+        toggleBottomSheet();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggleBottomSheet]);
+
   return (
-    <div className={style.sideBarDiv}>
+    <div className={style.sideBarDiv} ref={bottomSheetRef}>
       <NavLink to="/home">
         <FontAwesomeIcon icon={faInstagram} className={style.sideBarIcon} />
       </NavLink>
@@ -80,7 +98,9 @@ function Navbar({toggleBottomSheet}) {
 
         <div className={style.menuItem} onClick={toggleBottomSheet}>
           <FontAwesomeIcon icon={faBars} />
-          <p>More</p>
+          <NavLink to="" className={style.navlink}>
+            <p>More</p>
+          </NavLink>
         </div>
       </div>
     </div>

@@ -12,7 +12,7 @@
   align-items: flex-start;
 }
 .bottomSheetSection1 {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   width: 90%;
   height: fit-content;
   background-color: transparent;
@@ -31,6 +31,14 @@
   align-items: center;
   gap: 30px;
 }
+.bottomSheetContentContainer:hover {
+  background-color: rgb(227, 150, 142);
+  padding: 2px 15px;
+  text-decoration: none;
+  border-radius: 10em;
+  width: 70%;
+  margin: 10px 0px;
+}
 .bottomSheetContentContainer svg {
   font-size: 15px;
 }
@@ -40,14 +48,14 @@
   padding: 3.5px;
 }
 .navlink {
-  text-decoration: none; 
+  text-decoration: none;
 }
 .navlink p {
   text-decoration: none;
   color: #000;
 }
 .bottomSheetSection2 {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
   width: 90%;
   height: fit-content;
   background-color: transparent;
@@ -59,7 +67,7 @@
 .threads {
 }
 .bottomSheetSection3 {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
   width: 90%;
   background-color: transparent;
   margin: 1px;
@@ -69,7 +77,7 @@
 }
 
 .bottomSheetSection4 {
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
   width: 90%;
   background-color: transparent;
   background-color: transparent;
