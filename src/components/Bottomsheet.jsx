@@ -1,8 +1,16 @@
 import React from "react";
+import { NavLink } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import style from "../style/Bottomsheet.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBookmark,
+  faChartLine,
+  faCircleInfo,
+  faGear,
+  faMoon,
+} from "@fortawesome/free-solid-svg-icons";
+import { faThreads } from "@fortawesome/free-brands-svg-icons";
 
 function BottomSheet({ show, onHide }) {
   return (
@@ -11,46 +19,62 @@ function BottomSheet({ show, onHide }) {
         <div className={style.bottomSheetOuterContainer}>
           <div className={style.bottomSheetSection1}>
             <div className={style.bottomSheetContentContainer}>
-              <FontAwesomeIcon icon={faGear}/>
-              <p>Settings</p>
+              <FontAwesomeIcon icon={faGear} />
+              <NavLink to="" className={style.navlink}>
+                <p>Settings</p>
+              </NavLink>
             </div>
 
             <div className={style.bottomSheetContentContainer}>
-              {/*icon */}
-              <p>Your Activity</p>
+              <FontAwesomeIcon icon={faChartLine} />
+              <NavLink to="" className={style.navlink}>
+                <p>Your Activity</p>
+              </NavLink>
             </div>
 
             <div className={style.bottomSheetContentContainer}>
-              {/*icon */}
-              <p>Saved</p>
+              <FontAwesomeIcon icon={faBookmark} />
+              <NavLink to="" className={style.navlink}>
+                <p>Saved</p>
+              </NavLink>
             </div>
 
             <div className={style.bottomSheetContentContainer}>
-              {/*icon */}
-              <p>Switch appearance</p>
+              <FontAwesomeIcon icon={faMoon} />
+              <NavLink to="" className={style.navlink}>
+                <p>Switch appearance</p>
+              </NavLink>
             </div>
 
             <div className={style.bottomSheetContentContainer}>
-              {/*icon */}
-              <p>Report a problem</p>
+              <FontAwesomeIcon icon={faCircleInfo} />
+              <NavLink to="" className={style.navlink}>
+                <p>Report a problem</p>
+              </NavLink>
             </div>
           </div>
 
           <div className={style.bottomSheetSection2}>
             <div className={style.bottomSheetContentContainer}>
-              {/*icon */}
-              <p>Threads</p>
+              <FontAwesomeIcon icon={faThreads} className={style.threads} />
+              <NavLink to="" className={style.navlink}>
+                <p>Threads</p>
+              </NavLink>
             </div>
           </div>
 
           <div className={style.bottomSheetSection3}>
             <div className={style.bottomSheetContentContainer}>
-              <p>Switch accounts</p>
+              <NavLink to="" className={style.navlink}>
+                <p>Switch accounts</p>
+              </NavLink>
             </div>
           </div>
           <div className={style.bottomSheetSection4}>
             <div className={style.bottomSheetContentContainer}>
-              <p>Logout</p>
+              <NavLink to="" className={style.navlink}>
+                <p>Logout</p>
+              </NavLink>
             </div>
           </div>
         </div>

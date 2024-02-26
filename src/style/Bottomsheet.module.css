@@ -2,7 +2,7 @@
   position: fixed;
   top: 100px;
   left: 20px;
-  width: 30%;
+  width: 28%;
   height: 68%;
   background-color: rgba(211, 211, 211, 1);
   z-index: 1000;
@@ -12,41 +12,68 @@
   align-items: flex-start;
 }
 .bottomSheetSection1 {
-  width: 80%;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  width: 90%;
+  height: fit-content;
   background-color: transparent;
-  background-color: green;
-  margin: 5px;
-  margin-left: 35px; /**/
+  margin-bottom: 3px;
+  margin-left: 0px;
   padding: 0;
+  padding-left: 35px;
 }
+
 .bottomSheetContentContainer {
   width: fit-content;
-  background-color: red;
-  border-radius: 10px;
-  padding: 2px;
-  padding-left: 10px;
+  background-color: transparent;
+  padding: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 30px;
+}
+.bottomSheetContentContainer svg {
+  font-size: 15px;
+}
+.bottomSheetContentContainer > .navlink > p {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 3.5px;
+}
+.navlink {
+  text-decoration: none; 
+}
+.navlink p {
+  text-decoration: none;
+  color: #000;
 }
 .bottomSheetSection2 {
-  width: 80%;
-  background-color: green;
-  margin: 5px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  width: 90%;
+  height: fit-content;
+  background-color: transparent;
+  margin: 2px;
+  margin-left: 0px;
   padding: 0;
+  padding-left: 35px;
 }
-
+.threads {
+}
 .bottomSheetSection3 {
-  width: 80%;
-  background-color: green;
-  margin: 5px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  width: 90%;
+  background-color: transparent;
+  margin: 1px;
+  margin-left: 0px;
   padding: 0;
+  padding-left: 35px;
 }
 
 .bottomSheetSection4 {
-  width: 80%;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  width: 90%;
   background-color: transparent;
-  background-color: green;
+  background-color: transparent;
+  margin: 1px;
+  margin-left: 0px;
+  padding-left: 35px;
 }
-
-/*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);*/
