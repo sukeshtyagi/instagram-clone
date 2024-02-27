@@ -22,6 +22,8 @@ import {
 function Navbar({ toggleBottomSheet, usedIn }) {
   const bottomSheetRef = useRef(null);
   const [showPTags, setShowPTags] = useState(true);
+  const [showLensIcon, setShowLensIcon] = useState(false);
+  const [showCrossIcon, setShowCrossIcon] = useState(true);
 
   const [instaIconPaddingLeft, setInstaIconPaddingLeft] = useState("20px");
 
@@ -50,11 +52,17 @@ function Navbar({ toggleBottomSheet, usedIn }) {
     setShowPTags(!showPTags);
     setInstaIconPaddingLeft(showPTags ? "0px" : "20px");
     setSideBarDivPaddingRight(showPTags ? "0px" : "20px");
-    setShowSearchBox(true);
+    setShowSearchBox(!showSearchBox);
   };
 
   const handleNavLinkClick = () => {
     setShowPTags(true);
+    setShowSearchBox(false);
+  };
+
+  const handleCrossClick = () => {
+    setShowLensIcon(true);
+    setShowCrossIcon(false);
   };
 
   return (
@@ -94,11 +102,17 @@ function Navbar({ toggleBottomSheet, usedIn }) {
         </div>
         {showSearchBox && (
           <div className={style.searchBox}>
-            <h3>Search</h3>
-            <div className={style.searchDiv}>
-              <input type="text" placeholder="search" />
-              <FontAwesomeIcon icon={faXmark} />
+            <div className={style.searchDivContainer}>
+              <h3>Search</h3>
+              <div className={style.searchDiv}>
+                {showLensIcon && <FontAwesomeIcon icon={faMagnifyingGlass} />}
+                <input type="text" placeholder="search" />
+                {showCrossIcon && (
+                  <FontAwesomeIcon icon={faXmark} onClick={handleCrossClick} />
+                )}
+              </div>
             </div>
+            <h5>Recent</h5>
           </div>
         )}
 

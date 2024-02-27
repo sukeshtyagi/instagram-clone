@@ -49,6 +49,7 @@
 .menuItem p {
   font-size: 20px;
   color: rgba(0, 0, 0, 0.713);
+  transition: opacity 0.5s, height 0.5s;
 }
 .menuItem svg {
   font-size: 15px;
@@ -65,27 +66,35 @@
   border-radius: 10em;
 }
 .searchBox {
-  width: 22vw;
   height: 87vh;
+  width: fit-content;
   position: absolute;
   top: 23px;
-  left: 84px;
+  left: 90px;
   font-size: 20px;
   font-weight: 500;
   padding: 10px;
+  padding-right: 20px;
   margin: 2px;
   background-color: transparent;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  box-shadow: 05px 0 05px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
 }
 .searchBox h3 {
   margin-left: 10px;
   margin-top: 10px;
 }
+.searchDivContainer {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 2px solid darkgrey;
+}
 .searchDiv {
+  width: 95%;
   background-color: white;
   margin: 5px;
+  margin-right: 10px;
   margin-top: 25px;
   padding: 8px;
   border-radius: 15px;
@@ -96,16 +105,23 @@
 .searchDiv input {
   border: none;
   outline: none;
-  padding-left: 10px;
+  margin-left: 0;
+  padding-left: 0px;
   font-size: 15px;
   font-weight: 500;
 }
 .searchDiv svg {
-  margin-right: 10px;
+  margin-right: 0px;
+  margin: 0;
   font-size: 15px;
   color: rgba(49, 34, 34, 0.782);
   background-color: lightgray;
   border-radius: 50%;
   padding: 3px;
   cursor: pointer;
+}
+.searchBox h5 {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 18px;
 }
