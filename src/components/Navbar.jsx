@@ -16,6 +16,7 @@ import {
   faSquarePlus,
   faUser,
   faBars,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar({ toggleBottomSheet, usedIn }) {
@@ -25,6 +26,8 @@ function Navbar({ toggleBottomSheet, usedIn }) {
   const [instaIconPaddingLeft, setInstaIconPaddingLeft] = useState("20px");
 
   const [sideBarDivPaddingRight, setSideBarDivPaddingRight] = useState("60px");
+
+  const [showSearchBox, setShowSearchBox] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -47,6 +50,7 @@ function Navbar({ toggleBottomSheet, usedIn }) {
     setShowPTags(!showPTags);
     setInstaIconPaddingLeft(showPTags ? "0px" : "20px");
     setSideBarDivPaddingRight(showPTags ? "0px" : "20px");
+    setShowSearchBox(true);
   };
 
   const handleNavLinkClick = () => {
@@ -88,6 +92,15 @@ function Navbar({ toggleBottomSheet, usedIn }) {
             {showPTags && <p>Search</p>}
           </NavLink>
         </div>
+        {showSearchBox && (
+          <div className={style.searchBox}>
+            <h3>Search</h3>
+            <div className={style.searchDiv}>
+              <input type="text" placeholder="search" />
+              <FontAwesomeIcon icon={faXmark} />
+            </div>
+          </div>
+        )}
 
         <div className={style.menuItem}>
           <FontAwesomeIcon onClick={handleNavLinkClick} icon={faCompass} />
@@ -102,9 +115,7 @@ function Navbar({ toggleBottomSheet, usedIn }) {
           </NavLink>
         </div>
         <div className={style.menuItem}>
-          <FontAwesomeIcon
-            icon={faFacebookMessenger}
-          />
+          <FontAwesomeIcon icon={faFacebookMessenger} />
           <NavLink to="/message" className={style.navlink}>
             {showPTags && <p>Message</p>}
           </NavLink>

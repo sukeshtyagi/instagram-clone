@@ -23,11 +23,12 @@
 }
 .mainDiv h3 {
   position: relative;
-  left: 200px;
+  top: 15px;
+  left: 60px;
   font-size: 20px;
   font-weight: 700;
   margin-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 .cardDiv {
   background-color: white;
