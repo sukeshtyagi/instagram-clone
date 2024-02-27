@@ -35,7 +35,7 @@ function Navbar({ usedIn }) {
   const [showSearchBox, setShowSearchBox] = useState(false);
 
   const toggleBottomSheet = () => {
-    setShowBottomSheet(!showBottomSheet);
+    setShowBottomSheet(false);
   };
 
   useEffect(() => {

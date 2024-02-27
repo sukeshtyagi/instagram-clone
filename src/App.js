@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
-import Search from "./components/Search";
 import Explore from "./components/Explore";
 import Reels from "./components/Reels";
 import Messages from "./components/Messages";
@@ -20,7 +19,6 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/sign" element={<SignUp />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/search" element={<Search />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/reels" element={<Reels />} />
             <Route path="/messages" element={<Messages />} />

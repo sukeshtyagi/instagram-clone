@@ -1,0 +1,42 @@
+.exploreContainer {
+  background-color: rgb(236, 233, 233);
+  width: 100%;
+  margin-left: 18.1vw;
+  max-width: 81vw;
+  height: 92vh;
+  padding: 0;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 5px;
+}
+
+.item {
+  background-color: transparent;
+  padding: 2px;
+  border: none;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 5px;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item3 {
+  grid-row: span 2;
+}
+
+.item6 {
+  grid-row: span 2;
+}
