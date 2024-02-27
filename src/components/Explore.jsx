@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./Navbar";
 
 function Explore() {
   return (
-    <div>Explore</div>
-  )
+    <>
+      <Navbar />
+    </>
+  );
 }
 
-export default Explore
+export default Explore;

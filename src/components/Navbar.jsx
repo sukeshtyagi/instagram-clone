@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import style from "../style/Navbar.module.css";
+import BottomSheet from "./Bottomsheet";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,8 +20,10 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ toggleBottomSheet, usedIn }) {
+function Navbar({ usedIn }) {
   const bottomSheetRef = useRef(null);
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
+
   const [showPTags, setShowPTags] = useState(true);
   const [showLensIcon, setShowLensIcon] = useState(false);
   const [showCrossIcon, setShowCrossIcon] = useState(true);
@@ -30,6 +33,10 @@ function Navbar({ toggleBottomSheet, usedIn }) {
   const [sideBarDivPaddingRight, setSideBarDivPaddingRight] = useState("60px");
 
   const [showSearchBox, setShowSearchBox] = useState(false);
+
+  const toggleBottomSheet = () => {
+    setShowBottomSheet(!showBottomSheet);
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -85,18 +92,18 @@ function Navbar({ toggleBottomSheet, usedIn }) {
       </NavLink>
       <div className={style.menuList}>
         <div className={style.menuItem}>
-          <FontAwesomeIcon onClick={handleNavLinkClick} icon={faHouse} />
           <NavLink to="/home" className={style.navlink}>
+            <FontAwesomeIcon onClick={handleNavLinkClick} icon={faHouse} />
             {showPTags && <p>Home</p>}
           </NavLink>
         </div>
 
         <div className={style.menuItem} onClick={handleSearchClick}>
-          <FontAwesomeIcon
-            onClick={handleNavLinkClick}
-            icon={faMagnifyingGlass}
-          />
           <NavLink to="" className={style.navlink}>
+            <FontAwesomeIcon
+              onClick={handleNavLinkClick}
+              icon={faMagnifyingGlass}
+            />
             {showPTags && <p>Search</p>}
           </NavLink>
         </div>
@@ -117,51 +124,55 @@ function Navbar({ toggleBottomSheet, usedIn }) {
         )}
 
         <div className={style.menuItem}>
-          <FontAwesomeIcon onClick={handleNavLinkClick} icon={faCompass} />
           <NavLink to="/explore" className={style.navlink}>
+            <FontAwesomeIcon onClick={handleNavLinkClick} icon={faCompass} />
             {showPTags && <p>Explore</p>}
           </NavLink>
         </div>
+
         <div className={style.menuItem}>
-          <FontAwesomeIcon onClick={handleNavLinkClick} icon={faVideo} />
           <NavLink to="/reels" className={style.navlink}>
+            <FontAwesomeIcon onClick={handleNavLinkClick} icon={faVideo} />
             {showPTags && <p>Reels</p>}
           </NavLink>
         </div>
+
         <div className={style.menuItem}>
-          <FontAwesomeIcon icon={faFacebookMessenger} />
           <NavLink to="/message" className={style.navlink}>
+            <FontAwesomeIcon icon={faFacebookMessenger} />
             {showPTags && <p>Message</p>}
           </NavLink>
         </div>
+
         <div className={style.menuItem}>
-          <FontAwesomeIcon icon={faHeart} />
           <NavLink to="/notification" className={style.navlink}>
+            <FontAwesomeIcon icon={faHeart} />
             {showPTags && <p>Notification</p>}
           </NavLink>
         </div>
 
         <div className={style.menuItem}>
-          <FontAwesomeIcon icon={faSquarePlus} />
           <NavLink to="/Create" className={style.navlink}>
+            <FontAwesomeIcon icon={faSquarePlus} />
             {showPTags && <p>Create</p>}
           </NavLink>
         </div>
 
         <div className={style.menuItem}>
-          <FontAwesomeIcon onClick={handleNavLinkClick} icon={faUser} />
           <NavLink to="/Create" className={style.navlink}>
+            <FontAwesomeIcon onClick={handleNavLinkClick} icon={faUser} />
             {showPTags && <p>Profile</p>}
           </NavLink>
         </div>
 
         <div className={style.menuItem} onClick={toggleBottomSheet}>
-          <FontAwesomeIcon icon={faBars} />
           <NavLink to="" className={style.navlink}>
+            <FontAwesomeIcon icon={faBars} />
             {showPTags && <p>More</p>}
           </NavLink>
         </div>
       </div>
+      <BottomSheet show={showBottomSheet} onHide={toggleBottomSheet} />
     </div>
   );
 }

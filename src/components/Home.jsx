@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
 import style from "../style/Home.module.css";
-import BottomSheet from "./Bottomsheet";
 import Navbar from "./Navbar";
 
 function Home() {
   const [data, setData] = useState(null);
-
-  const [showBottomSheet, setShowBottomSheet] = useState(false);
-
-  const toggleBottomSheet = () => {
-    setShowBottomSheet(!showBottomSheet);
-  };
 
   useEffect(() => {
     const getData = async () => {
@@ -32,7 +25,7 @@ function Home() {
 
   return (
     <div className={style.homeContainer}>
-      <Navbar toggleBottomSheet={toggleBottomSheet} />
+      <Navbar />
       <div className={style.mainDiv}>
         <h3>Suggested for you</h3>
         {data &&
@@ -51,7 +44,6 @@ function Home() {
             </div>
           ))}
       </div>
-      <BottomSheet show={showBottomSheet} onHide={toggleBottomSheet} />
     </div>
   );
 }
