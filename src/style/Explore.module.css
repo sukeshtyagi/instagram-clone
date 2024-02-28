@@ -26,11 +26,14 @@
   max-width: 320px;
   height: auto;
   margin: 0 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .item img {
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .item3 {

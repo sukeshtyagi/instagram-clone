@@ -4,29 +4,40 @@ import style from "../style/Explore.module.css";
 
 function Explore() {
   const [data, setData] = useState(null);
+  const [rowCount, setRowCount] = useState(0);
 
   const getData = async () => {
     const url = "http://localhost:4000/explore";
     const response = await fetch(url);
-    console.log(response);
     const database = await response.json();
-    console.log(database);
     setData(database);
+    setRowCount(Math.ceil(database.length / 3));
   };
 
   useEffect(() => {
     getData();
   }, []);
 
+  // Function to determine if an item should have a row span of 2
+  const shouldSpanTwoRows = (index) => {
+    return ((index% 10 === 2)|| (index%10===5)); 
+  };
+
   return (
     <div className={style.exploreContainer}>
       <Navbar />
-      <div className={style.gridContainer}>
+      <div
+        className={style.gridContainer}
+        style={{ gridTemplateRows: `repeat(${rowCount}, auto)` }}
+      >
         {data &&
           data.map((item, index) => (
             <div
               key={index}
               className={`${style.item} ${style["item" + (index + 1)]}`}
+              style={{
+                gridRow: shouldSpanTwoRows(index) ? "span 2" : "span 1",
+              }}
             >
               <img src={item.image} alt="" />
             </div>
