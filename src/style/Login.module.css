@@ -1,7 +1,7 @@
 .outerDiv {
   width: 100%;
   max-width: 600px;
-  height: 100vh;
+  height: auto;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,8 @@
   align-items: flex-start;
   margin: auto;
   margin-top: 30px;
+  padding: 01%;
+  padding-left: 15%;
 }
 .loginDiv {
   margin: 0;
