@@ -42,7 +42,8 @@ function Navbar({ usedIn }) {
     function handleClickOutside(event) {
       if (
         bottomSheetRef.current &&
-        !bottomSheetRef.current.contains(event.target)
+        !bottomSheetRef.current.contains(event.target) &&
+        showBottomSheet
       ) {
         toggleBottomSheet();
       }

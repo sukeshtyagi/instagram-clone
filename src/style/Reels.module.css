@@ -2,11 +2,12 @@
   background-color: rgb(236, 233, 233);
   width: 100%;
   max-width: 81vw;
-  height: 95vh;
+  height: 100vh;
   margin-left: 18.1vw;
   display: flex;
   align-items: flex-end;
   gap: 40px;
+  position: relative;
 }
 .reelsContent {
   width: 35%;
@@ -52,10 +53,8 @@
 }
 .onvideo {
   position: absolute;
-  top: 150px;
-  left: 540px;
-  width: 100%;
-  height: 100%;
+  top: 420px;
+  left: 320px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -112,5 +111,12 @@
 .onvideo3 svg {
   font-size: 24px;
   margin-top: 5px;
-  color: rgb(201, 61, 61);
+  color: rgb(240, 17, 17);
+}
+.inputComment {
+  font-size: 15px;
+  padding: 5px;
+  margin: 3px;
+  border: none;
+  outline: none;
 }
