@@ -20,7 +20,7 @@ function Reels() {
   const [likeEvent, setLikeEvent] = useState(true);
   const [inputBoxVisible, setInputBoxVisible] = useState(false);
   const [input, setInput] = useState("");
-  const [visibleItemId, setVisibleItemId] = useState(null);
+  const [openCommentItemId, setOpenCommentItemId] = useState(null);
 
   const getData = async () => {
     const url = "http://localhost:4000/reels";
@@ -73,9 +73,7 @@ function Reels() {
   };
 
   const handleCommentsClick = (id) => {
-    setInputBoxVisible(!inputBoxVisible);
-    console.log(inputBoxVisible);
-    console.log(id);
+    setOpenCommentItemId(id === openCommentItemId ? null : id);
   };
 
   return (
@@ -92,7 +90,26 @@ function Reels() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+
+              <div className={style.onvideo}>
+                <div className={style.onvideo1}>
+                  <img src={item.image} alt="" />
+                  <p>save earth</p>
+                  <p>---</p>
+                  <button>Follow</button>
+                </div>
+                <div className={style.onvideo2}>
+                  <p>tag your friends</p>
+                  <FontAwesomeIcon icon={faHandPeace} />
+                </div>
+                <div className={style.onvideo3}>
+                  <FontAwesomeIcon icon={faGuitar} />
+                  <p>original audio</p>
+                </div>
+              </div>
             </div>
+
+            
             <div className={style.iconContent}>
               <div className={style.likesDiv}>
                 <FontAwesomeIcon
@@ -109,9 +126,9 @@ function Reels() {
                     handleCommentsClick(item.id);
                   }}
                 />
-                {inputBoxVisible && (
+                {openCommentItemId === item.id && (
                   <input
-                    className={style.input}
+                    className={style.inputComment}
                     type="text"
                     value={input}
                     placeholder="Comment here"
@@ -141,23 +158,6 @@ function Reels() {
 
               <div className={style.imageDiv}>
                 <img src={item.image} alt="" width={40} height={30} />
-              </div>
-            </div>
-
-            <div className={style.onvideo}>
-              <div className={style.onvideo1}>
-                <img src={item.image} alt="" />
-                <p>save earth</p>
-                <p>---</p>
-                <button>Follow</button>
-              </div>
-              <div className={style.onvideo2}>
-                <p>tag your friends</p>
-                <FontAwesomeIcon icon={faHandPeace} />
-              </div>
-              <div className={style.onvideo3}>
-                <FontAwesomeIcon icon={faGuitar} />
-                <p>original audio</p>
               </div>
             </div>
           </div>
