@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 20px;
   padding-right: 015px;
+  padding-left: 015px;
   border-right: 1px solid darkgray;
 }
 .newMessageDiv {
