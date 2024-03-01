@@ -3,19 +3,76 @@
   margin: 0;
   padding: 0;
   display: flex;
+  overflow: hidden;
 }
 
 .leftDiv {
   background-color: transparent;
-  flex: 1;
+  width: 8.2%;
+  height: 100vh;
 }
 
 .centerDiv {
-  background-color: orange;
-  flex: 2;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.newMessageDiv {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newMessageDiv svg {
+  font-size: 30px;
+}
+.profileNameDiv {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+}
+.profileNameDiv h3 {
+  font-size: 25px;
+}
+.profileNameDiv svg {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.requestDiv {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.requestDiv h3 {
+  font-size: 20px;
+}
+.requestDiv h4 {
+  font-size: 15px;
+  color: rgb(236, 233, 233);
+}
+
+.oldMessageDiv {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  overflow-y: auto;
 }
 
 .rightDiv {
   background-color: green;
-  flex: 3; 
+  width: 61%;
+  height: 100vh;
+  border: 1px solid black;
 }

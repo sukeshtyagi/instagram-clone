@@ -81,12 +81,6 @@ function Navbar({ showPTags, updateShowPTags }) {
     setShowCrossIcon(false);
   };
 
-  /*
-  const handleMessageClick = () => {
-    setShowPTags(false);
-  };
-  */
-
   useEffect(() => {
     setInstaIconPaddingLeft(showPTags ? "20px" : "0px");
     setSideBarDivPaddingRight(showPTags ? "60px" : "20px");
