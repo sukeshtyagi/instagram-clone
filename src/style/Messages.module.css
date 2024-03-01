@@ -1,0 +1,23 @@
+/* Messages.module.css */
+
+.messagesContainer {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.leftDiv {
+  background-color: transparent;
+  flex: 1;
+}
+
+.centerDiv {
+  background-color: orange;
+  flex: 2; /* Adjust the width as needed */
+}
+
+.rightDiv {
+  background-color: green;
+  flex: 3; /* Adjust the flex value as needed */
+}

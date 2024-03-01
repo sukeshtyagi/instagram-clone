@@ -139,7 +139,10 @@ function Navbar({ usedIn }) {
         </div>
 
         <div className={style.menuItem}>
-          <NavLink to="/message" className={style.navlink}>
+          <NavLink
+            to="/messages"
+            className={style.navlink}
+          >
             <FontAwesomeIcon icon={faFacebookMessenger} />
             {showPTags && <p>Message</p>}
           </NavLink>
