@@ -21,6 +21,11 @@ function Reels() {
   const [inputBoxVisible, setInputBoxVisible] = useState(false);
   const [input, setInput] = useState("");
   const [openCommentItemId, setOpenCommentItemId] = useState(null);
+  const [showPTags, setShowPTags] = useState(true);
+
+  const updateShowPTags = (newValue) => {
+    setShowPTags(newValue);
+  };
 
   const getData = async () => {
     const url = "http://localhost:4000/reels";
@@ -78,7 +83,7 @@ function Reels() {
 
   return (
     <>
-      <Navbar />
+       <Navbar showPTags={showPTags} updateShowPTags={updateShowPTags} />
       {data &&
         data.map((item) => (
           <div key={item.id} className={style.reelsContainer}>

@@ -20,11 +20,10 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ usedIn }) {
+function Navbar({ showPTags, updateShowPTags }) {
   const bottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
 
-  const [showPTags, setShowPTags] = useState(true);
   const [showLensIcon, setShowLensIcon] = useState(false);
   const [showCrossIcon, setShowCrossIcon] = useState(true);
 
@@ -57,21 +56,41 @@ function Navbar({ usedIn }) {
   }, [toggleBottomSheet]);
 
   const handleSearchClick = () => {
-    setShowPTags(!showPTags);
-    setInstaIconPaddingLeft(showPTags ? "0px" : "20px");
-    setSideBarDivPaddingRight(showPTags ? "0px" : "20px");
-    setShowSearchBox(!showSearchBox);
+    updateShowPTags(false);
+    setShowSearchBox(true);
+    console.log("handleSearchClick");
   };
 
-  const handleNavLinkClick = () => {
-    setShowPTags(true);
-    setShowSearchBox(false);
+  const handleNavLinkClick = (event) => {
+    event.stopImmediatePropagation();
+    // Toggle the search box state based on its current value
+    setShowSearchBox((prevShowSearchBox) => {
+      // If the search box is currently open, update showPTags to true
+      if (prevShowSearchBox) {
+        updateShowPTags(true);
+      }
+      // Return the opposite value of the previous state for showSearchBox
+      return !prevShowSearchBox;
+    });
+    console.log("handleNavLinkClick executed");
   };
 
-  const handleCrossClick = () => {
+  const handleCrossClick = (event) => {
+    event.stopImmediatePropagation();
     setShowLensIcon(true);
     setShowCrossIcon(false);
   };
+
+  /*
+  const handleMessageClick = () => {
+    setShowPTags(false);
+  };
+  */
+
+  useEffect(() => {
+    setInstaIconPaddingLeft(showPTags ? "20px" : "0px");
+    setSideBarDivPaddingRight(showPTags ? "60px" : "20px");
+  }, [showPTags]);
 
   return (
     <div
@@ -101,10 +120,7 @@ function Navbar({ usedIn }) {
 
         <div className={style.menuItem} onClick={handleSearchClick}>
           <NavLink to="" className={style.navlink}>
-            <FontAwesomeIcon
-              onClick={handleNavLinkClick}
-              icon={faMagnifyingGlass}
-            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
             {showPTags && <p>Search</p>}
           </NavLink>
         </div>
@@ -139,11 +155,11 @@ function Navbar({ usedIn }) {
         </div>
 
         <div className={style.menuItem}>
-          <NavLink
-            to="/messages"
-            className={style.navlink}
-          >
-            <FontAwesomeIcon icon={faFacebookMessenger} />
+          <NavLink to="/messages" className={style.navlink}>
+            <FontAwesomeIcon
+              icon={faFacebookMessenger}
+              onClick={handleNavLinkClick}
+            />
             {showPTags && <p>Message</p>}
           </NavLink>
         </div>

@@ -5,6 +5,11 @@ import style from "../style/Explore.module.css";
 function Explore() {
   const [data, setData] = useState(null);
   const [rowCount, setRowCount] = useState(0);
+  const [showPTags, setShowPTags] = useState(true);
+
+  const updateShowPTags = (newValue) => {
+    setShowPTags(newValue);
+  };
 
   const getData = async () => {
     const url = "http://localhost:4000/explore";
@@ -18,14 +23,13 @@ function Explore() {
     getData();
   }, []);
 
-  // Function to determine if an item should have a row span of 2
   const shouldSpanTwoRows = (index) => {
-    return ((index% 10 === 2)|| (index%10===5)); 
+    return index % 10 === 2 || index % 10 === 5;
   };
 
   return (
     <div className={style.exploreContainer}>
-      <Navbar />
+      <Navbar showPTags={showPTags} updateShowPTags={updateShowPTags} />
       <div
         className={style.gridContainer}
         style={{ gridTemplateRows: `repeat(${rowCount}, auto)` }}

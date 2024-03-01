@@ -70,11 +70,11 @@
   border-radius: 10em;
 }
 .searchBox {
-  height: 87vh;
+  height: 89.5vh;
   width: fit-content;
   position: absolute;
   top: 23px;
-  left: 90px;
+  left: 110px;
   font-size: 20px;
   font-weight: 500;
   padding: 10px;

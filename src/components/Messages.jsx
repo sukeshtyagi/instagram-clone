@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import style from "../style/Messages.module.css";
 
 function Messages() {
+  const [showPTags, setShowPTags] = useState(false);
+
+  const updateShowPTags = (newValue) => {
+    setShowPTags(newValue);
+  };
   return (
     <div className={style.messagesContainer}>
       <div className={style.leftDiv}>
-        <Navbar />
+        <Navbar showPTags={showPTags} updateShowPTags={updateShowPTags} />
       </div>
       <div className={style.centerDiv}>
         <h3>hi from center div</h3>

@@ -4,6 +4,11 @@ import Navbar from "./Navbar";
 
 function Home() {
   const [data, setData] = useState(null);
+  const [showPTags, setShowPTags] = useState(true);
+
+  const updateShowPTags = (newValue) => {
+    setShowPTags(newValue);
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -25,7 +30,7 @@ function Home() {
 
   return (
     <div className={style.homeContainer}>
-      <Navbar />
+      <Navbar showPTags={showPTags} updateShowPTags={updateShowPTags} />
       <div className={style.mainDiv}>
         <h3>Suggested for you</h3>
         {data &&
