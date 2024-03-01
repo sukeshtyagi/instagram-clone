@@ -18,7 +18,6 @@ function Messages() {
       </div>
 
       <div className={style.centerDiv}>
-
         <div className={style.newMessageDiv}>
           <div className={style.profileNameDiv}>
             <h3>instagram_clone</h3>
@@ -31,7 +30,7 @@ function Messages() {
           <h3>Messages</h3>
           <h4>Requests</h4>
         </div>
-        
+
         <div className={style.oldMessageDiv}>
           <p>No messages found.</p>
         </div>
