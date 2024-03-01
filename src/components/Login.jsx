@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import style from "../style/Login.module.css";
 
 function Login({
+  newUser,
   usedFor,
   subtext,
   subtextStyle,
@@ -43,13 +44,15 @@ function Login({
           </NavLink>
         )}
 
-        <div className={style.segregationDiv}>
-          <div className={style.emptyDiv}></div>
-          <div className={style.textDiv}>OR</div>
-          <div className={style.emptyDiv}></div>
-        </div>
+        {!newUser && (
+          <div className={style.segregationDiv}>
+            <div className={style.emptyDiv}></div>
+            <div className={style.textDiv}>OR</div>
+            <div className={style.emptyDiv}></div>
+          </div>
+        )}
 
-        {!usedFor && (
+        {!usedFor && !newUser && (
           <>
             <div className={style.optionDiv}>
               <NavLink className={style.navlink}>
@@ -61,6 +64,12 @@ function Login({
             </div>
             <p>Forgotten your password?</p>
           </>
+        )}
+
+        {newUser && (
+          <div className={style.optionDiv}>
+            <p>Forgotten your password?</p>
+          </div>
         )}
 
         {usedFor && (
@@ -93,7 +102,8 @@ function Login({
           </div>
         )}
       </div>
-      {!usedFor && (
+
+      {!usedFor && !newUser && (
         <div className={style.signInDiv}>
           <p>
             Don't have an account?{" "}
@@ -115,13 +125,15 @@ function Login({
         </div>
       )}
 
-      <div className={style.appDiv}>
-        <p>Get the App</p>
-        <div className={style.appDownloadDiv}>
-          <img src="/images/appstore.png" alt="get from app store" />
-          <img src="/images/playstore.png" alt="get from google play" />
+      {!newUser && (
+        <div className={style.appDiv}>
+          <p>Get the App</p>
+          <div className={style.appDownloadDiv}>
+            <img src="/images/appstore.png" alt="get from app store" />
+            <img src="/images/playstore.png" alt="get from google play" />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

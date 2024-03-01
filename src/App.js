@@ -9,6 +9,7 @@ import Messages from "./components/Messages";
 import Notification from "./components/Notification";
 import Create from "./components/Create";
 import Profile from "./components/Profile";
+import AnotherLogin from "./components/AnotherLogin";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/reels" element={<Reels />} />
             <Route path="/messages" element={<Messages />} />
-            <Route path="/notification" element={<Notification />} />
+            <Route path="/notification" element={<AnotherLogin />} />
             <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
