@@ -5,12 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
 import AnotherLogin from "./AnotherLogin";
+import NewChat from "./NewChat";
 
 function Messages() {
   const [showLogin, setShowLogin] = useState(false);
+  const [newChat, setNewChat] = useState(false);
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
+  };
+
+  const toggleNewChat = () => {
+    setNewChat(!newChat);
   };
 
   const [showPTags, setShowPTags] = useState(false);
@@ -30,7 +36,7 @@ function Messages() {
             <h3>instagram_clone</h3>
             <FontAwesomeIcon icon={faAngleDown} onClick={toggleLogin} />
           </div>
-          <FontAwesomeIcon icon={faEdit} />
+          <FontAwesomeIcon icon={faEdit} onClick={toggleNewChat} />
         </div>
 
         {showLogin && (
@@ -40,6 +46,8 @@ function Messages() {
             </div>
           </div>
         )}
+
+        {newChat && <NewChat newChat={newChat} toggleNewChat={toggleNewChat} />}
 
         <div className={style.requestDiv}>
           <h3>Messages</h3>
@@ -56,7 +64,7 @@ function Messages() {
           <FontAwesomeIcon icon={faFacebookMessenger} />
           <h2>Your messages</h2>
           <p>Send private photos and messages to a friend or group.</p>
-          <button>send message</button>
+          <button onClick={toggleNewChat}>send message</button>
         </div>
       </div>
     </div>

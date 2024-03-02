@@ -6,10 +6,9 @@ import Home from "./components/Home";
 import Explore from "./components/Explore";
 import Reels from "./components/Reels";
 import Messages from "./components/Messages";
-import Notification from "./components/Notification";
 import Create from "./components/Create";
 import Profile from "./components/Profile";
-import AnotherLogin from "./components/AnotherLogin";
+import NewChat from "./components/NewChat";
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/reels" element={<Reels />} />
             <Route path="/messages" element={<Messages />} />
-            <Route path="/notification" element={<AnotherLogin />} />
+            <Route path="/notification" element={<NewChat />} />
             <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>

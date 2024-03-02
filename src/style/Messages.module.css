@@ -33,6 +33,11 @@
 
 .newMessageDiv svg {
   font-size: 30px;
+  cursor: pointer;
+}
+.newMessageDiv svg:hover {
+  background-color: #339bfc;
+  padding: 2px;
 }
 .profileNameDiv {
   display: flex;
@@ -113,7 +118,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  background-color: #3355fc;
+  background-color: #339bfc;
 }
 .overlay {
   position: fixed;
@@ -121,7 +126,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.65);
   z-index: 9990;
 }
 .newUserLogin {
