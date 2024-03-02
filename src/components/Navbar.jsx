@@ -63,13 +63,10 @@ function Navbar({ showPTags, updateShowPTags }) {
 
   const handleNavLinkClick = (event) => {
     event.stopImmediatePropagation();
-    // Toggle the search box state based on its current value
     setShowSearchBox((prevShowSearchBox) => {
-      // If the search box is currently open, update showPTags to true
       if (prevShowSearchBox) {
         updateShowPTags(true);
       }
-      // Return the opposite value of the previous state for showSearchBox
       return !prevShowSearchBox;
     });
     console.log("handleNavLinkClick executed");

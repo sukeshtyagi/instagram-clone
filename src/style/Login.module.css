@@ -142,3 +142,39 @@
 .appDownloadDiv img {
   width: 70px;
 }
+
+.newUserLoginCancel {
+  position: relative;
+  top: -15px;
+  left: 190px;
+  font-size: 30px;
+  margin: 0;
+  padding-right: 10px;
+}
+.noBorder .loginDiv {
+  border: none;
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  padding: 30px;
+}
+.noBorder {
+  width: 100%;
+  max-width: 400px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noBorder .loginDiv input {
+  width: 300px;
+}
+.noBorder .loginDiv button {
+  width: 320px;
+}
+.newUserOptionDiv {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+}

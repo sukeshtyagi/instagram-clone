@@ -4,8 +4,15 @@ import style from "../style/Messages.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookMessenger } from "@fortawesome/free-brands-svg-icons";
+import AnotherLogin from "./AnotherLogin";
 
 function Messages() {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const toggleLogin = () => {
+    setShowLogin(!showLogin);
+  };
+
   const [showPTags, setShowPTags] = useState(false);
 
   const updateShowPTags = (newValue) => {
@@ -21,10 +28,18 @@ function Messages() {
         <div className={style.newMessageDiv}>
           <div className={style.profileNameDiv}>
             <h3>instagram_clone</h3>
-            <FontAwesomeIcon icon={faAngleDown} />
+            <FontAwesomeIcon icon={faAngleDown} onClick={toggleLogin} />
           </div>
           <FontAwesomeIcon icon={faEdit} />
         </div>
+
+        {showLogin && (
+          <div className={style.overlay}>
+            <div className={style.newUserLogin}>
+              <AnotherLogin showLogin={showLogin} toggleLogin={toggleLogin} />
+            </div>
+          </div>
+        )}
 
         <div className={style.requestDiv}>
           <h3>Messages</h3>

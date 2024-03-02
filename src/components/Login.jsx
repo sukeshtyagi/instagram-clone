@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import style from "../style/Login.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Login({
+  showLogin,
+  toggleLogin,
   newUser,
   usedFor,
   subtext,
@@ -17,8 +21,15 @@ function Login({
   };
 
   return (
-    <div className={style.outerDiv}>
+    <div className={`${style.outerDiv} ${newUser ? style.noBorder : ""}`}>
       <div className={style.loginDiv}>
+        {newUser && (
+          <FontAwesomeIcon
+            icon={faXmark}
+            className={style.newUserLoginCancel}
+            onClick={toggleLogin}
+          />
+        )}
         <img src="/images/instalogo.jpeg" alt="instagram logo" />
         {subtext && <h4 className={subtextStyle}>{subtext}</h4>}
         {!usedFor && (
@@ -67,7 +78,7 @@ function Login({
         )}
 
         {newUser && (
-          <div className={style.optionDiv}>
+          <div className={style.newUserOptionDiv}>
             <p>Forgotten your password?</p>
           </div>
         )}
