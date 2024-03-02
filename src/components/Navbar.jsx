@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import style from "../style/Navbar.module.css";
 import BottomSheet from "./Bottomsheet";
 import { NavLink } from "react-router-dom";
+import NotificationBox from "./NotificationBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookMessenger,
@@ -20,7 +21,12 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar({ showPTags, updateShowPTags }) {
+function Navbar({
+  showPTags,
+  updateShowPTags,
+  showNavigationBox,
+  handleNavigationClick,
+}) {
   const bottomSheetRef = useRef(null);
   const [showBottomSheet, setShowBottomSheet] = useState(false);
 
@@ -62,7 +68,6 @@ function Navbar({ showPTags, updateShowPTags }) {
   };
 
   const handleNavLinkClick = (event) => {
-    event.stopImmediatePropagation();
     setShowSearchBox((prevShowSearchBox) => {
       if (prevShowSearchBox) {
         updateShowPTags(true);
@@ -73,7 +78,6 @@ function Navbar({ showPTags, updateShowPTags }) {
   };
 
   const handleCrossClick = (event) => {
-    event.stopImmediatePropagation();
     setShowLensIcon(true);
     setShowCrossIcon(false);
   };
@@ -155,12 +159,13 @@ function Navbar({ showPTags, updateShowPTags }) {
           </NavLink>
         </div>
 
-        <div className={style.menuItem}>
-          <NavLink to="/notification" className={style.navlink}>
+        <div className={style.menuItem} onClick={handleNavigationClick}>
+          <NavLink to="" className={style.navlink}>
             <FontAwesomeIcon icon={faHeart} />
             {showPTags && <p>Notification</p>}
           </NavLink>
         </div>
+        {showNavigationBox && <NotificationBox />}
 
         <div className={style.menuItem}>
           <NavLink to="/Create" className={style.navlink}>

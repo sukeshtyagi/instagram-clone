@@ -10,13 +10,15 @@ import NewChat from "./NewChat";
 function Messages() {
   const [showLogin, setShowLogin] = useState(false);
   const [newChat, setNewChat] = useState(false);
+  const [showNavigationBox, setShowNavigationBox] = useState(false);
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
   };
 
-  const toggleNewChat = () => {
+  const openNewChat = () => {
     setNewChat(!newChat);
+    setShowNavigationBox(false);
   };
 
   const [showPTags, setShowPTags] = useState(false);
@@ -24,10 +26,21 @@ function Messages() {
   const updateShowPTags = (newValue) => {
     setShowPTags(newValue);
   };
+
+  const handleNavigationClick = () => {
+    setShowNavigationBox(true);
+    console.log("handleNavigationClick");
+  };
+
   return (
     <div className={style.messagesContainer}>
       <div className={style.leftDiv}>
-        <Navbar showPTags={showPTags} updateShowPTags={updateShowPTags} />
+        <Navbar
+          showPTags={showPTags}
+          updateShowPTags={updateShowPTags}
+          showNavigationBox={showNavigationBox}
+          handleNavigationClick={handleNavigationClick}
+        />
       </div>
 
       <div className={style.centerDiv}>
@@ -36,7 +49,7 @@ function Messages() {
             <h3>instagram_clone</h3>
             <FontAwesomeIcon icon={faAngleDown} onClick={toggleLogin} />
           </div>
-          <FontAwesomeIcon icon={faEdit} onClick={toggleNewChat} />
+          <FontAwesomeIcon icon={faEdit} onClick={openNewChat} />
         </div>
 
         {showLogin && (
@@ -47,7 +60,7 @@ function Messages() {
           </div>
         )}
 
-        {newChat && <NewChat newChat={newChat} toggleNewChat={toggleNewChat} />}
+        {newChat && <NewChat newChat={newChat} toggleNewChat={openNewChat} />}
 
         <div className={style.requestDiv}>
           <h3>Messages</h3>
@@ -64,7 +77,7 @@ function Messages() {
           <FontAwesomeIcon icon={faFacebookMessenger} />
           <h2>Your messages</h2>
           <p>Send private photos and messages to a friend or group.</p>
-          <button onClick={toggleNewChat}>send message</button>
+          <button onClick={openNewChat}>send message</button>
         </div>
       </div>
     </div>

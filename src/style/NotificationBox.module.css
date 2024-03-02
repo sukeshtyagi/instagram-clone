@@ -1,0 +1,43 @@
+.notificationBoxContainer {
+  background-color: rgb(236, 233, 233);
+  margin-left: 9.2%;
+  width: 28%;
+  height: 95vh;
+  border-top-right-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.topDiv h3 {
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+.midDiv {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.midDivIcon {
+  font-size: 2.5em;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.midDivP1 {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+.midDivP2 {
+  margin: 0em 3em;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  text-align: center;
+}

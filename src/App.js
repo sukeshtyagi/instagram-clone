@@ -8,7 +8,7 @@ import Reels from "./components/Reels";
 import Messages from "./components/Messages";
 import Create from "./components/Create";
 import Profile from "./components/Profile";
-import NewChat from "./components/NewChat";
+import NotificationBox from "./components/NotificationBox";
 
 function App() {
   return (
@@ -22,8 +22,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/reels" element={<Reels />} />
             <Route path="/messages" element={<Messages />} />
-            <Route path="/notification" element={<NewChat />} />
-            <Route path="/create" element={<Create />} />
+            <Route path="/create" element={<NotificationBox />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>
