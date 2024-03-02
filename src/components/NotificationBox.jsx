@@ -2,6 +2,7 @@ import React from "react";
 import style from "../style/NotificationBox.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Suggestions from "./Suggestions";
 
 function NotificationBox() {
   return (
@@ -18,7 +19,10 @@ function NotificationBox() {
         </p>
       </div>
       <div className={style.bodyDiv}>
-        <h1>main div of home page</h1>
+        <Suggestions
+          mainDivStyle={style.mainDivNoMargin}
+          cardDivStyle={style.cardDivNoMargin}
+        />
       </div>
     </div>
   );
