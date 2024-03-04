@@ -3,6 +3,7 @@ import style from "../style/Navbar.module.css";
 import BottomSheet from "./Bottomsheet";
 import { NavLink } from "react-router-dom";
 import NotificationBox from "./NotificationBox";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookMessenger,
@@ -20,6 +21,7 @@ import {
   faBars,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import Create from "./Create";
 
 function Navbar({
   showPTags,
@@ -38,6 +40,8 @@ function Navbar({
   const [sideBarDivPaddingRight, setSideBarDivPaddingRight] = useState("60px");
 
   const [showSearchBox, setShowSearchBox] = useState(false);
+
+  const [showCreateBox, setShowCreateBox] = useState(false);
 
   const toggleBottomSheet = () => {
     setShowBottomSheet(!showBottomSheet);
@@ -80,6 +84,14 @@ function Navbar({
   const handleCrossClick = (event) => {
     setShowLensIcon(true);
     setShowCrossIcon(false);
+  };
+
+  const handleCreateClick = () => {
+    setShowCreateBox(true);
+  };
+
+  const toggleCreateBox = () => {
+    setShowCreateBox(!showCreateBox);
   };
 
   useEffect(() => {
@@ -169,10 +181,16 @@ function Navbar({
 
         <div className={style.menuItem}>
           <NavLink to="/Create" className={style.navlink}>
-            <FontAwesomeIcon icon={faSquarePlus} />
+            <FontAwesomeIcon icon={faSquarePlus} onClick={toggleCreateBox} />
             {showPTags && <p>Create</p>}
           </NavLink>
         </div>
+        {showCreateBox && (
+          <Create
+            showCreateBox={showCreateBox}
+            toggleCreateBox={toggleCreateBox}
+          />
+        )}
 
         <div className={style.menuItem}>
           <NavLink to="/Create" className={style.navlink}>

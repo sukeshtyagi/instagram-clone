@@ -11,6 +11,12 @@ function Messages() {
   const [showLogin, setShowLogin] = useState(false);
   const [newChat, setNewChat] = useState(false);
   const [showNavigationBox, setShowNavigationBox] = useState(false);
+  const [showPTags, setShowPTags] = useState(false);
+
+  const handleNavigationClick = () => {
+    setShowNavigationBox(true);
+    console.log("handleNavigationClick");
+  };
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
@@ -21,15 +27,8 @@ function Messages() {
     setShowNavigationBox(false);
   };
 
-  const [showPTags, setShowPTags] = useState(false);
-
   const updateShowPTags = (newValue) => {
     setShowPTags(newValue);
-  };
-
-  const handleNavigationClick = () => {
-    setShowNavigationBox(true);
-    console.log("handleNavigationClick");
   };
 
   return (

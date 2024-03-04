@@ -1,0 +1,79 @@
+.overlayDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 9990;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cancelIcon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-weight: 100;
+  font-size: 25px;
+  z-index: 99999;
+}
+.createContainer {
+  background-color: orange;
+  background-color: white;
+  width: 30%;
+  height: 70vh;
+  border-radius: 20px;
+}
+.topDiv {
+  width: 100%;
+}
+.topDiv h6 {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid darkgray;
+}
+.mainDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.iconsDiv {
+  display: flex;
+  font-size: 80px;
+  transform: rotate(-10deg);
+}
+.icon2 {
+  position: relative;
+  top: 45px;
+  left: -20px;
+  transform: rotate(18deg);
+}
+.mainDiv p {
+  font-size: 1.25em;
+  color: #000;
+  font-weight: 500;
+  padding: 5px;
+  margin-top: 45px;
+}
+.mainDiv button {
+  background-color: #57a2db;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.mainDiv button:hover {
+  background-color: #2a74ad;
+  color: antiquewhite;
+}

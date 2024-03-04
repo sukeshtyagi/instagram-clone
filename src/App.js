@@ -8,7 +8,7 @@ import Reels from "./components/Reels";
 import Messages from "./components/Messages";
 import Create from "./components/Create";
 import Profile from "./components/Profile";
-import NotificationBox from "./components/NotificationBox";
+import React from "react";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/reels" element={<Reels />} />
             <Route path="/messages" element={<Messages />} />
-            <Route path="/create" element={<NotificationBox />} />
+            <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>
