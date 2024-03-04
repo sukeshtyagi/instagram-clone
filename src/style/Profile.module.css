@@ -1,8 +1,4 @@
-* {
-  color: #000;
-  font-weight: 500;
-  font-size: 20px;
-}
+
 .outerContainer {
   box-sizing: border-box;
 }
@@ -21,7 +17,7 @@
   margin: 0px;
   padding: 10px;
   padding-bottom: 20px;
-  border-bottom: 2px dashed darkgray;
+  border-bottom: 2px dashed #4fb8f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,4 +115,28 @@
   text-align: center;
   margin-top: 5px;
   font-weight: 600;
+}
+.bodyDiv {
+  width: 100%;
+  display: flex;
+  gap: 1.75em;
+  align-items: center;
+  justify-content: center;
+}
+.bodyDiv button {
+  border: none;
+  padding: 10px 5px;
+  margin: 0;
+  outline: none;
+  background-color: transparent;
+  position: relative;
+  top: -2px;
+}
+.bodyDiv p {
+  font-size: 1.25em;
+}
+.activeButtonPost {
+  margin-top: 1em;
+  text-align: center;
+  font-weight: 700;
 }

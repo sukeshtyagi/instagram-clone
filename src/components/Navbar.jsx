@@ -96,7 +96,7 @@ function Navbar({
 
   useEffect(() => {
     setInstaIconPaddingLeft(showPTags ? "20px" : "0px");
-    setSideBarDivPaddingRight(showPTags ? "60px" : "20px");
+    setSideBarDivPaddingRight(showPTags ? "60px" : "0px");
   }, [showPTags]);
 
   return (

@@ -9,6 +9,7 @@ import Messages from "./components/Messages";
 import Create from "./components/Create";
 import Profile from "./components/Profile";
 import React from "react";
+import Error from "./components/Error";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/messages" element={<Messages />} />
             <Route path="/create" element={<Create />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/error" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </div>

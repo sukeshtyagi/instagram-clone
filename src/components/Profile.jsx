@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "../style/Profile.module.css";
 import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,9 +6,18 @@ import { faUser, faGear, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
   const [showPTags, setShowPTags] = useState(true);
+
   const updateShowPTags = (newValue) => {
     setShowPTags(newValue);
   };
+
+  const [activeButton, setActiveButton] = useState("");
+
+  const handleClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
+  useEffect(() => {}, [activeButton]);
 
   return (
     <div className={style.outerContainer}>
@@ -65,6 +74,43 @@ function Profile() {
             <p>New</p>
           </div>
         </div>
+
+        <div className={style.bodyDiv}>
+          <div className={style.postsDiv}>
+            <button
+              onClick={() => handleClick("posts")}
+              style={{
+                borderTop: activeButton === "posts" ? "3px solid darkgrey" : "",
+              }}
+            >
+              <p>Posts</p>
+            </button>
+          </div>
+          <div className={style.savedDiv}>
+            <button
+              onClick={() => handleClick("saved")}
+              style={{
+                borderTop: activeButton === "saved" ? "3px solid darkgrey" : "",
+              }}
+            >
+              <p>Saved</p>
+            </button>
+          </div>
+          <div className={style.taggedDiv}>
+            <button
+              onClick={() => handleClick("tagged")}
+              style={{
+                borderTop:
+                  activeButton === "tagged" ? "3px solid darkgrey" : "",
+              }}
+            >
+              <p>Tagged</p>
+            </button>
+          </div>
+        </div>
+        {activeButton === "posts" && <p className={style.activeButtonPost}>You have 0 Posts</p>}
+        {activeButton === "saved" && <p className={style.activeButtonPost}>You have 0 Saved Posts</p>}
+        {activeButton === "tagged" && <p className={style.activeButtonPost}>You have 0 Tagged Posts</p>}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 .sideBarDiv {
-  width: 12vw;
   padding-left: 5px;
   background-color: rgb(236, 233, 233);
   border-bottom: 01px solid rgba(198, 175, 175, 0.703);
@@ -130,3 +129,4 @@
   margin-left: 10px;
   font-size: 18px;
 }
+
