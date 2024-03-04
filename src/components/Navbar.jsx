@@ -180,8 +180,12 @@ function Navbar({
         {showNavigationBox && <NotificationBox />}
 
         <div className={style.menuItem}>
-          <NavLink to="/Create" className={style.navlink}>
-            <FontAwesomeIcon icon={faSquarePlus} onClick={toggleCreateBox} />
+          <NavLink
+            to="/Create"
+            className={style.navlink}
+            onClick={toggleCreateBox}
+          >
+            <FontAwesomeIcon icon={faSquarePlus} />
             {showPTags && <p>Create</p>}
           </NavLink>
         </div>
@@ -193,7 +197,7 @@ function Navbar({
         )}
 
         <div className={style.menuItem}>
-          <NavLink to="/Create" className={style.navlink}>
+          <NavLink to="/profile" className={style.navlink}>
             <FontAwesomeIcon onClick={handleNavLinkClick} icon={faUser} />
             {showPTags && <p>Profile</p>}
           </NavLink>
